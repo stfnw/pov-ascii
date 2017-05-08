@@ -1,6 +1,6 @@
 # pov-ascii
 
-This is a simple demonstration of [persistence of vision (POV)](https://en.wikipedia.org/wiki/Persistence_of_vision) using the Atmel ATmega8 Microcontroller and eight LEDs to display ASCII-Strings.
+This is a simple demonstration of [persistence of vision (POV)](https://en.wikipedia.org/wiki/Persistence_of_vision) using the Atmel ATmega8 microcontroller and eight LEDs to display ASCII-Strings.
 
 I just wanted to try it out myself :-) (there are tons of projects like this online)
 
@@ -20,12 +20,12 @@ The fonts are not directly included (see below for details why)
 
 ### How it works
 
-POV works, because the eye does not react instantaniously to stimulus and therefore a small flash of light leaves a short afterimage and is perceived for a longer time than the light is actually turned on.
-This optical illusion allows the drawing of seemingly floating shapes in the air, for example by turning leds on and off in a fast pattern and waving them around.
+POV works, because the eye does not react instantaneously to stimulus and therefore a small flash of light leaves a short afterimage and is perceived for a longer time than the light is actually turned on.
+This optical illusion allows the drawing of seemingly floating shapes in the air, for example by turning LEDs on and off in a fast pattern and waving them around.
 
 
 To display text, the different characters and symbols of the alphabet have to be translated to the corresponding blink-patterns for the LEDs.
-In C, this is usually done by saving the needed characters in a two-dimensional array in a seperate header-file, where each inner array represents one character.
+In C, this is usually done by saving the needed characters in a two-dimensional array in a separate header-file, where each inner array represents one character.
 
 
 For example, to display the letter `A` with five LEDs (ignoring the other three bits of one byte), one could use the following pattern (where each `1` represents one turned-on LED and each `0` represents one turned-off LED)
@@ -61,7 +61,7 @@ Without the `0`s the pattern itself looks like this: an `A` rotated by 90 degree
 
 ### Example fonts
 
-The fonts used for this project are truncated to represent a subset of ASCII characters, more specificly the range from `0x20` (SPACE) to `0x7F` (DEL).
+The fonts used for this project are truncated to represent a subset of ASCII characters, more specifically the range from `0x20` (SPACE) to `0x7F` (DEL).
 They are not directly included, because I am not sure under which license - if any - they were published.
 
 
@@ -89,5 +89,5 @@ Usually this requires two steps:
 
  2. converting each bitmap to the corresponding C-Array by iterating over it pixel for pixel
 
-During my search for a solution, I came across someone someone way smarter than me ([Jared Sanson](http://jared.geek.nz/2014/jan/custom-fonts-for-microcontrollers)), who already had taken a bit of his time and wrote [a small python script](http://jared.geek.nz/custom-fonts-for-microcontrollers/files/fonts.zip) based on the Python Imaging Library (PIL) to automate the whole process.
+During my search for a solution, I came across someone way smarter than me ([Jared Sanson](http://jared.geek.nz/2014/jan/custom-fonts-for-microcontrollers)), who already had taken a bit of his time and wrote [a small python script](http://jared.geek.nz/custom-fonts-for-microcontrollers/files/fonts.zip) based on the Python Imaging Library (PIL) to automate the whole process.
 With a bit of parameter tweaking (e.g. the right settings for character height and width) and a [good pixel font](http://www.dafont.com/de/bitmap.php) as basis, the result can be quite remarkable.
