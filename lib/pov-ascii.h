@@ -2,7 +2,7 @@
 #define POVASCII_H
 
 /* displays a string on the LEDs */
-void display_string(char* string);
+void display_string(char *string);
 
 /* displays a character on the LEDs
  * the font is 8 pixels wide

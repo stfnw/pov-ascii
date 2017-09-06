@@ -11,9 +11,21 @@ A few images of the final result:
 
 ## Origin / Sources
 
-The idea and large parts of the code (including the Makefile) are mainly taken from Chapter 3, povToy.c of the book [Make: AVR Programming](http://shop.oreilly.com/product/0636920028161.do) by Elliot Williams, who made his source code publicly available on github: [AVR-Programming](https://github.com/hexagon5un/AVR-Programming).  
+The idea and large parts of the code are mainly taken from Chapter 3, povToy.c of the book [Make: AVR Programming](http://shop.oreilly.com/product/0636920028161.do) by Elliot Williams, who made his source code publicly available on github: [AVR-Programming](https://github.com/hexagon5un/AVR-Programming).
 The source code was originally written for the ATmega 168, which is also used in the popular Arduino, so a few very small changes were necessary to port it to the ATmega8.
+The awesome CMake toolchain file for AVR microcontrollers and the corresponding CMakeLists.txt are taken from [Matthias Kleemann](https://github.com/mkleemann/cmake-avr).
 The fonts are not directly included (see below for details why)
+
+
+## Build
+
+First, clone the project: `git clone https://github.com/stfnw/pov-ascii`
+To build and flash the program onto the microcontroller run the following commands:
+
+    mkdir pov-ascii/build
+    cd pov-ascii/build
+    cmake ../
+    make upload_pov-ascii
 
 
 ## POV-Fonts
