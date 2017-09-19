@@ -18,6 +18,15 @@ const int character_length = sizeof(font[0]) / sizeof(font[0][0]);
 
 
 // -------- Functions --------- //
+void flash(uint8_t times) {
+    for (uint8_t i = 0; i < times; i++) {
+        PORTB = 0xff;
+        _delay_ms(delay_time * 100);
+        PORTB = 0x00;
+        _delay_ms(delay_time * 100);
+    }
+}
+
 void display_string(char *string) {
     for (int i = 0; i < strlen(string); i++) {
         // display only the characters available in the font

@@ -1,6 +1,9 @@
 #ifndef POVASCII_H
 #define POVASCII_H
 
+/* flash "times" times (e.g. for timing photography) */
+void flash(uint8_t times);
+
 /* displays a string on the LEDs */
 void display_string(char *string);
 

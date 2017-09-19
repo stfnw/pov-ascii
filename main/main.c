@@ -5,6 +5,8 @@ int main(void) {
     // -------- Initialize the ports --------- //
     DDRB = 0xff; /* Set up all of LED pins for output */
 
+    flash(3);
+
     // ------ Event / main loop ------ //
     while (1) {
         char message[] = "Hello World!";
