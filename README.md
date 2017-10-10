@@ -22,6 +22,9 @@ The fonts are not directly included (see below for details why)
 First, clone the project: `git clone https://github.com/stfnw/pov-ascii`
 To build and flash the program onto the microcontroller run the following commands:
 
+    # first manually add a font file under pov-ascii/lib
+    cp <path-to-some-font.h> pov-ascii/lib/
+
     mkdir pov-ascii/build
     cd pov-ascii/build
     cmake ../
